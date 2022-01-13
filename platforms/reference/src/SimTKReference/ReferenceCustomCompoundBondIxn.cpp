@@ -144,6 +144,10 @@ void ReferenceCustomCompoundBondIxn::calculateOneIxn(int bond, vector<Vec3>& ato
     
     for (int i = 0; i < energyParamDerivExpressions.size(); i++)
         energyParamDerivs[i] += energyParamDerivExpressions[i].evaluate();
+   
+   for (int i : atoms)
+        printf("%d ", i);
+        printf("%g\n", energyExpression.evaluate());
 }
 
 void ReferenceCustomCompoundBondIxn::computeDelta(int atom1, int atom2, double* delta, vector<Vec3>& atomCoordinates) const {
